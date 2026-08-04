@@ -1,0 +1,702 @@
+[
+  {
+    "title": "A Light in the Attic",
+    "price_raw": "Â£51.77",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Poetry"
+  },
+  {
+    "title": "Tipping the Velvet",
+    "price_raw": "Â£53.74",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Historical Fiction"
+  },
+  {
+    "title": "Soumission",
+    "price_raw": "Â£50.10",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Fiction"
+  },
+  {
+    "title": "Sharp Objects",
+    "price_raw": "Â£47.82",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Mystery"
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "price_raw": "Â£54.23",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "History"
+  },
+  {
+    "title": "The Requiem Red",
+    "price_raw": "Â£22.65",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Young Adult"
+  },
+  {
+    "title": "The Dirty Little Secrets of Getting Your Dream Job",
+    "price_raw": "Â£33.34",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Business"
+  },
+  {
+    "title": "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",
+    "price_raw": "Â£17.93",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics",
+    "price_raw": "Â£22.60",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "The Black Maria",
+    "price_raw": "Â£52.15",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Poetry"
+  },
+  {
+    "title": "Starving Hearts (Triangular Trade Trilogy, #1)",
+    "price_raw": "Â£13.99",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "Shakespeare's Sonnets",
+    "price_raw": "Â£20.66",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Poetry"
+  },
+  {
+    "title": "Set Me Free",
+    "price_raw": "Â£17.46",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Young Adult"
+  },
+  {
+    "title": "Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)",
+    "price_raw": "Â£52.29",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Rip it Up and Start Again",
+    "price_raw": "Â£35.02",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Music"
+  },
+  {
+    "title": "Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991",
+    "price_raw": "Â£57.25",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Music"
+  },
+  {
+    "title": "Olio",
+    "price_raw": "Â£23.88",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Poetry"
+  },
+  {
+    "title": "Mesaerion: The Best Science Fiction Stories 1800-1849",
+    "price_raw": "Â£37.59",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Science Fiction"
+  },
+  {
+    "title": "Libertarianism for Beginners",
+    "price_raw": "Â£51.33",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Politics"
+  },
+  {
+    "title": "It's Only the Himalayas",
+    "price_raw": "Â£45.17",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Travel"
+  },
+  {
+    "title": "In Her Wake",
+    "price_raw": "Â£12.84",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Thriller"
+  },
+  {
+    "title": "How Music Works",
+    "price_raw": "Â£37.32",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Music"
+  },
+  {
+    "title": "Foolproof Preserving: A Guide to Small Batch Jams, Jellies, Pickles, Condiments, and More: A Foolproof Guide to Making Small Batch Jams, Jellies, Pickles, Condiments, and More",
+    "price_raw": "Â£30.52",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Food and Drink"
+  },
+  {
+    "title": "Chase Me (Paris Nights #2)",
+    "price_raw": "Â£25.27",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Romance"
+  },
+  {
+    "title": "Black Dust",
+    "price_raw": "Â£34.53",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Romance"
+  },
+  {
+    "title": "Birdsong: A Story in Pictures",
+    "price_raw": "Â£54.64",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Childrens"
+  },
+  {
+    "title": "America's Cradle of Quarterbacks: Western Pennsylvania's Football Factory from Johnny Unitas to Joe Montana",
+    "price_raw": "Â£22.50",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "Aladdin and His Wonderful Lamp",
+    "price_raw": "Â£53.13",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "Worlds Elsewhere: Journeys Around Shakespeareâs Globe",
+    "price_raw": "Â£40.30",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "Wall and Piece",
+    "price_raw": "Â£44.18",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Art"
+  },
+  {
+    "title": "The Four Agreements: A Practical Guide to Personal Freedom",
+    "price_raw": "Â£17.66",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Spirituality"
+  },
+  {
+    "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
+    "price_raw": "Â£31.05",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "The Elephant Tree",
+    "price_raw": "Â£23.82",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Thriller"
+  },
+  {
+    "title": "The Bear and the Piano",
+    "price_raw": "Â£36.89",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Childrens"
+  },
+  {
+    "title": "Sophie's World",
+    "price_raw": "Â£15.94",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Philosophy"
+  },
+  {
+    "title": "Penny Maybe",
+    "price_raw": "Â£33.29",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "Maude (1883-1993):She Grew Up with the country",
+    "price_raw": "Â£18.02",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "In a Dark, Dark Wood",
+    "price_raw": "Â£19.63",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Mystery"
+  },
+  {
+    "title": "Behind Closed Doors",
+    "price_raw": "Â£52.22",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Thriller"
+  },
+  {
+    "title": "You can't bury them all: Poems",
+    "price_raw": "Â£33.63",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Poetry"
+  },
+  {
+    "title": "Slow States of Collapse: Poems",
+    "price_raw": "Â£57.31",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Poetry"
+  },
+  {
+    "title": "Reasons to Stay Alive",
+    "price_raw": "Â£26.41",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "Private Paris (Private #10)",
+    "price_raw": "Â£47.61",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Fiction"
+  },
+  {
+    "title": "#HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.",
+    "price_raw": "Â£23.11",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "Without Borders (Wanderlove #1)",
+    "price_raw": "Â£45.07",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "New Adult"
+  },
+  {
+    "title": "When We Collided",
+    "price_raw": "Â£31.77",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Contemporary"
+  },
+  {
+    "title": "We Love You, Charlie Freeman",
+    "price_raw": "Â£50.27",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Fiction"
+  },
+  {
+    "title": "Untitled Collection: Sabbath Poems 2014",
+    "price_raw": "Â£14.27",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Poetry"
+  },
+  {
+    "title": "Unseen City: The Majesty of Pigeons, the Discreet Charm of Snails & Other Wonders of the Urban Wilderness",
+    "price_raw": "Â£44.18",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "Unicorn Tracks",
+    "price_raw": "Â£18.78",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Fantasy"
+  },
+  {
+    "title": "Unbound: How Eight Technologies Made Us Human, Transformed Society, and Brought Our World to the Brink",
+    "price_raw": "Â£25.52",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "History"
+  },
+  {
+    "title": "Tsubasa: WoRLD CHRoNiCLE 2 (Tsubasa WoRLD CHRoNiCLE #2)",
+    "price_raw": "Â£16.28",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Throwing Rocks at the Google Bus: How Growth Became the Enemy of Prosperity",
+    "price_raw": "Â£31.12",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "This One Summer",
+    "price_raw": "Â£19.49",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Thirst",
+    "price_raw": "Â£17.27",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Fiction"
+  },
+  {
+    "title": "The Torch Is Passed: A Harding Family Story",
+    "price_raw": "Â£19.09",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Add a comment"
+  },
+  {
+    "title": "The Secret of Dreadwillow Carse",
+    "price_raw": "Â£56.13",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Childrens"
+  },
+  {
+    "title": "The Pioneer Woman Cooks: Dinnertime: Comfort Classics, Freezer Food, 16-Minute Meals, and Other Delicious Ways to Solve Supper!",
+    "price_raw": "Â£56.41",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Food and Drink"
+  },
+  {
+    "title": "The Past Never Ends",
+    "price_raw": "Â£56.50",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Mystery"
+  },
+  {
+    "title": "The Natural History of Us (The Fine Art of Pretending #2)",
+    "price_raw": "Â£45.22",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Young Adult"
+  },
+  {
+    "title": "The Nameless City (The Nameless City #1)",
+    "price_raw": "Â£38.16",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "The Murder That Never Was (Forensic Instincts #5)",
+    "price_raw": "Â£54.11",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Fiction"
+  },
+  {
+    "title": "The Most Perfect Thing: Inside (and Outside) a Bird's Egg",
+    "price_raw": "Â£42.96",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Science"
+  },
+  {
+    "title": "The Mindfulness and Acceptance Workbook for Anxiety: A Guide to Breaking Free from Anxiety, Phobias, and Worry Using Acceptance and Commitment Therapy",
+    "price_raw": "Â£23.89",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Add a comment"
+  },
+  {
+    "title": "The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing",
+    "price_raw": "Â£16.77",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer",
+    "price_raw": "Â£20.59",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "The Gutsy Girl: Escapades for Your Life of Epic Adventure",
+    "price_raw": "Â£37.13",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "The Electric Pencil: Drawings from Inside State Hospital No. 3",
+    "price_raw": "Â£56.06",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "The Death of Humanity: and the Case for Life",
+    "price_raw": "Â£58.11",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Philosophy"
+  },
+  {
+    "title": "The Bulletproof Diet: Lose up to a Pound a Day, Reclaim Energy and Focus, Upgrade Your Life",
+    "price_raw": "Â£49.05",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Health"
+  },
+  {
+    "title": "The Art Forger",
+    "price_raw": "Â£40.76",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Add a comment"
+  },
+  {
+    "title": "The Age of Genius: The Seventeenth Century and the Birth of the Modern Mind",
+    "price_raw": "Â£19.73",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "History"
+  },
+  {
+    "title": "The Activist's Tao Te Ching: Ancient Advice for a Modern Revolution",
+    "price_raw": "Â£32.24",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Spirituality"
+  },
+  {
+    "title": "Spark Joy: An Illustrated Master Class on the Art of Organizing and Tidying Up",
+    "price_raw": "Â£41.83",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "Soul Reader",
+    "price_raw": "Â£39.58",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Default"
+  },
+  {
+    "title": "Security",
+    "price_raw": "Â£39.25",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Horror"
+  },
+  {
+    "title": "Saga, Volume 6 (Saga (Collected Editions) #6)",
+    "price_raw": "Â£25.02",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Fantasy"
+  },
+  {
+    "title": "Saga, Volume 5 (Saga (Collected Editions) #5)",
+    "price_raw": "Â£51.04",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Reskilling America: Learning to Labor in the Twenty-First Century",
+    "price_raw": "Â£19.83",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  },
+  {
+    "title": "Rat Queens, Vol. 3: Demons (Rat Queens (Collected Editions) #11-15)",
+    "price_raw": "Â£50.40",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)",
+    "price_raw": "Â£13.61",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Princess Between Worlds (Wide-Awake Princess #5)",
+    "price_raw": "Â£13.34",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Fantasy"
+  },
+  {
+    "title": "Pop Gun War, Volume 1: Gift",
+    "price_raw": "Â£18.97",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Political Suicide: Missteps, Peccadilloes, Bad Calls, Backroom Hijinx, Sordid Pasts, Rotten Breaks, and Just Plain Dumb Mistakes in the Annals of American Politics",
+    "price_raw": "Â£36.28",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "History"
+  },
+  {
+    "title": "Patience",
+    "price_raw": "Â£10.16",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Outcast, Vol. 1: A Darkness Surrounds Him (Outcast #1)",
+    "price_raw": "Â£15.44",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "orange: The Complete Collection 1 (orange: The Complete Collection #1)",
+    "price_raw": "Â£48.41",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Online Marketing for Busy Authors: A Step-By-Step Guide",
+    "price_raw": "Â£46.35",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Self Help"
+  },
+  {
+    "title": "On a Midnight Clear",
+    "price_raw": "Â£14.07",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Add a comment"
+  },
+  {
+    "title": "Obsidian (Lux #1)",
+    "price_raw": "Â£14.86",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Young Adult"
+  },
+  {
+    "title": "My Paris Kitchen: Recipes and Stories",
+    "price_raw": "Â£33.37",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Food and Drink"
+  },
+  {
+    "title": "Masks and Shadows",
+    "price_raw": "Â£56.40",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Fantasy"
+  },
+  {
+    "title": "Mama Tried: Traditional Italian Cooking for the Screwed, Crude, Vegan, and Tattooed",
+    "price_raw": "Â£14.02",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Food and Drink"
+  },
+  {
+    "title": "Lumberjanes, Vol. 2: Friendship to the Max (Lumberjanes #5-8)",
+    "price_raw": "Â£46.91",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Lumberjanes, Vol. 1: Beware the Kitten Holy (Lumberjanes #1-4)",
+    "price_raw": "Â£45.61",
+    "star_rating_raw": "Three",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Lumberjanes Vol. 3: A Terrible Plan (Lumberjanes #9-12)",
+    "price_raw": "Â£19.92",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Sequential Art"
+  },
+  {
+    "title": "Layered: Baking, Building, and Styling Spectacular Cakes",
+    "price_raw": "Â£40.11",
+    "star_rating_raw": "One",
+    "availability_raw": "In stock",
+    "category": "Food and Drink"
+  },
+  {
+    "title": "Judo: Seven Steps to Black Belt (an Introductory Guide for Beginners)",
+    "price_raw": "Â£53.90",
+    "star_rating_raw": "Two",
+    "availability_raw": "In stock",
+    "category": "Add a comment"
+  },
+  {
+    "title": "Join",
+    "price_raw": "Â£35.67",
+    "star_rating_raw": "Five",
+    "availability_raw": "In stock",
+    "category": "Science Fiction"
+  },
+  {
+    "title": "In the Country We Love: My Family Divided",
+    "price_raw": "Â£22.00",
+    "star_rating_raw": "Four",
+    "availability_raw": "In stock",
+    "category": "Nonfiction"
+  }
+]
