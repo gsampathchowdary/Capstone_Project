@@ -1,0 +1,9 @@
+# Python environment & cache
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ChromaDB vector store cache
+support_assistant/chroma_db/
