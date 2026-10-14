@@ -1,17 +1,10 @@
 import os
-<<<<<<< HEAD
-=======
 import sys
->>>>>>> feature/data-pipeline
 import joblib
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-<<<<<<< HEAD
-# Scikit-Learn & Imblearn Imports
-=======
->>>>>>> feature/data-pipeline
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
@@ -32,16 +25,6 @@ BASE_DIR = os.path.dirname(__file__)
 CSV_PATH = os.path.join(BASE_DIR, "titanic.csv")
 MODEL_DIR = os.path.join(BASE_DIR, "models")
 CHARTS_DIR = os.path.join(BASE_DIR, "charts")
-<<<<<<< HEAD
-
-os.makedirs(MODEL_DIR, exist_ok=True)
-os.makedirs(CHARTS_DIR, exist_ok=True)
-
-def load_data():
-    """Loads dataset from committed offline fallback titanic.csv file."""
-    df = pd.read_csv(CSV_PATH)
-    # Drop deck due to >77% missing rate as justified in EDA
-=======
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 
 os.makedirs(MODEL_DIR, exist_ok=True)
@@ -70,14 +53,10 @@ class TeeLogger:
 def load_data():
     """Loads dataset from committed offline fallback titanic.csv."""
     df = pd.read_csv(CSV_PATH)
->>>>>>> feature/data-pipeline
     if "deck" in df.columns:
         df.drop(columns=["deck"], inplace=True)
     return df
 
-<<<<<<< HEAD
-def run_modeling_pipeline():
-=======
 
 def generate_markdown_report(metrics_list, reg_metrics):
     """Generates a structured markdown file linking all charts and evaluation metrics."""
@@ -117,46 +96,27 @@ def generate_markdown_report(metrics_list, reg_metrics):
 
 def run_modeling_pipeline():
     """Executes tasks 7 through 14, gathers metrics, and exports reports."""
->>>>>>> feature/data-pipeline
     df = load_data()
     
     # -------------------------------------------------------------
     # TASK 7: STRATIFIED TRAIN/TEST SPLIT
     # -------------------------------------------------------------
-<<<<<<< HEAD
-    print("=="*30)
-    print("            TASK 7: STRATIFIED TRAIN/TEST SPLIT          ")
-    print("=="*30)
-=======
     print("=========================================================")
     print("            TASK 7: STRATIFIED TRAIN/TEST SPLIT          ")
     print("=========================================================")
->>>>>>> feature/data-pipeline
     
     X = df.drop(columns=["survived", "alive"])
     y = df["survived"]
     
-<<<<<<< HEAD
-    # Stratified split ensures exact target balance preservation in train/test splits
-=======
->>>>>>> feature/data-pipeline
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.20, random_state=42, stratify=y
     )
     
-<<<<<<< HEAD
-    print(f"Train set shape: {X_train.shape} | Test set shape: {X_test.shape}")
-    print(f"Train survival rate: {y_train.mean():.4f} | Test survival rate: {y_test.mean():.4f}\n")
-
-    # -------------------------------------------------------------
-    # TASK 8: PREPROCESSING PIPELINE (ColumnTransformer)
-=======
     print(f"Train shape: {X_train.shape} | Test shape: {X_test.shape}")
     print(f"Train survival mean: {y_train.mean():.4f} | Test survival mean: {y_test.mean():.4f}\n")
 
     # -------------------------------------------------------------
     # TASK 8: PREPROCESSING PIPELINE
->>>>>>> feature/data-pipeline
     # -------------------------------------------------------------
     num_features = ["age", "fare", "pclass", "sibsp", "parch"]
     cat_features = ["sex", "embarked"]
@@ -177,19 +137,11 @@ def run_modeling_pipeline():
     ])
 
     # -------------------------------------------------------------
-<<<<<<< HEAD
-    # TASK 9 & 10: TRAIN 3 CLASSIFIERS & DECISION TREE PLOT
-    # -------------------------------------------------------------
-    print("=="*30)
-    print("      TASK 9 & 10: CLASSIFIER TRAINING & EVALUATION      ")
-    print("=="*30)
-=======
     # TASK 9 & 10: TRAIN AND EVALUATE 3 CLASSIFIERS
     # -------------------------------------------------------------
     print("=========================================================")
     print("      TASK 9 & 10: CLASSIFIER TRAINING & EVALUATION      ")
     print("=========================================================")
->>>>>>> feature/data-pipeline
 
     classifiers = {
         "Logistic Regression": LogisticRegression(random_state=42),
@@ -200,24 +152,13 @@ def run_modeling_pipeline():
     results = []
 
     for name, clf in classifiers.items():
-<<<<<<< HEAD
-        # Wrap preprocessor and estimator into one end-to-end Pipeline
-=======
->>>>>>> feature/data-pipeline
         model_pipeline = Pipeline([
             ("preprocessor", preprocessor),
             ("classifier", clf)
         ])
 
-<<<<<<< HEAD
-        # Fit strictly on train fold
         model_pipeline.fit(X_train, y_train)
 
-        # Predict on test fold
-=======
-        model_pipeline.fit(X_train, y_train)
-
->>>>>>> feature/data-pipeline
         y_pred = model_pipeline.predict(X_test)
         y_prob = model_pipeline.predict_proba(X_test)[:, 1]
 
@@ -236,30 +177,18 @@ def run_modeling_pipeline():
             "ROC-AUC": round(auc, 4)
         })
 
-<<<<<<< HEAD
-        print(f"\n--- {name} Performance ---")
-        print(f"Accuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f} | AUC: {auc:.4f}")
-=======
         print(f"\n--- {name} ---")
         print(f"Accuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f} | ROC-AUC: {auc:.4f}")
->>>>>>> feature/data-pipeline
         print("Confusion Matrix:")
         print(confusion_matrix(y_test, y_pred))
 
     # Save Decision Tree Visualization
-<<<<<<< HEAD
-    dt_pipeline = Pipeline([("preprocessor", preprocessor), ("classifier", DecisionTreeClassifier(max_depth=3, random_state=42))])
-    dt_pipeline.fit(X_train, y_train)
-    
-    # Extract feature names
-=======
     dt_pipeline = Pipeline([
         ("preprocessor", preprocessor),
         ("classifier", DecisionTreeClassifier(max_depth=3, random_state=42))
     ])
     dt_pipeline.fit(X_train, y_train)
     
->>>>>>> feature/data-pipeline
     cat_onehot_cols = dt_pipeline.named_steps["preprocessor"].named_transformers_["cat"].named_steps["onehot"].get_feature_names_out(cat_features).tolist()
     feature_names = num_features + cat_onehot_cols
 
@@ -271,51 +200,27 @@ def run_modeling_pipeline():
         filled=True,
         fontsize=10
     )
-<<<<<<< HEAD
-    plt.title("Decision Tree Visualization (Max Depth = 3)")
-    plt.tight_layout()
-    plt.savefig(os.path.join(CHARTS_DIR, "decision_tree.png"))
-    plt.close()
-    print(f"\n[SUCCESS] Decision tree visualization saved to '{CHARTS_DIR}/decision_tree.png'.\n")
-=======
     plt.title("Decision Tree Visualization")
     plt.tight_layout()
     plt.savefig(os.path.join(CHARTS_DIR, "decision_tree.png"))
     plt.close()
     print(f"\n[SAVED] Decision tree chart saved to '{CHARTS_DIR}/decision_tree.png'.\n")
->>>>>>> feature/data-pipeline
 
     # -------------------------------------------------------------
     # TASK 11: IMBALANCE HANDLING COMPARISON
     # -------------------------------------------------------------
-<<<<<<< HEAD
-    print("=="*30)
-    print("        TASK 11: CLASS IMBALANCE STRATEGY COMPARISON      ")
-    print("=="*30)
-
-    # (a) Baseline Random Forest
-=======
     print("=========================================================")
     print("        TASK 11: CLASS IMBALANCE STRATEGY COMPARISON      ")
     print("=========================================================")
 
->>>>>>> feature/data-pipeline
     rf_base = Pipeline([("preprocessor", preprocessor), ("clf", RandomForestClassifier(random_state=42))])
     rf_base.fit(X_train, y_train)
     p_base = rf_base.predict(X_test)
 
-<<<<<<< HEAD
-    # (b) Class Weight Balanced
-=======
->>>>>>> feature/data-pipeline
     rf_bal = Pipeline([("preprocessor", preprocessor), ("clf", RandomForestClassifier(class_weight="balanced", random_state=42))])
     rf_bal.fit(X_train, y_train)
     p_bal = rf_bal.predict(X_test)
 
-<<<<<<< HEAD
-    # (c) SMOTE Oversampling on Train Fold Only
-=======
->>>>>>> feature/data-pipeline
     rf_smote = ImbPipeline([
         ("preprocessor", preprocessor),
         ("smote", SMOTE(random_state=42)),
@@ -324,19 +229,6 @@ def run_modeling_pipeline():
     rf_smote.fit(X_train, y_train)
     p_smote = rf_smote.predict(X_test)
 
-<<<<<<< HEAD
-    print("Imbalance Comparison Results (Random Forest):")
-    print(f"1. Baseline        -> Precision: {precision_score(y_test, p_base):.4f}, Recall: {recall_score(y_test, p_base):.4f}, F1: {f1_score(y_test, p_base):.4f}")
-    print(f"2. Class Balanced  -> Precision: {precision_score(y_test, p_bal):.4f}, Recall: {recall_score(y_test, p_bal):.4f}, F1: {f1_score(y_test, p_bal):.4f}")
-    print(f"3. SMOTE (Train)   -> Precision: {precision_score(y_test, p_smote):.4f}, Recall: {recall_score(y_test, p_smote):.4f}, F1: {f1_score(y_test, p_smote):.4f}\n")
-
-    # -------------------------------------------------------------
-    # TASK 12: HYPERPARAMETER TUNING (GridSearchCV + OOB Score)
-    # -------------------------------------------------------------
-    print("=="*30)
-    print("      TASK 12: GRIDSEARCHCV & OOB SCORE EVALUATION       ")
-    print("=="*30)
-=======
     print("Imbalance Handling Results:")
     print(f"1. Baseline       -> Precision: {precision_score(y_test, p_base):.4f}, Recall: {recall_score(y_test, p_base):.4f}, F1: {f1_score(y_test, p_base):.4f}")
     print(f"2. Class Balanced -> Precision: {precision_score(y_test, p_bal):.4f}, Recall: {recall_score(y_test, p_bal):.4f}, F1: {f1_score(y_test, p_bal):.4f}")
@@ -348,7 +240,6 @@ def run_modeling_pipeline():
     print("=========================================================")
     print("      TASK 12: GRIDSEARCHCV & OOB SCORE EVALUATION       ")
     print("=========================================================")
->>>>>>> feature/data-pipeline
 
     rf_oob_clf = RandomForestClassifier(oob_score=True, random_state=42)
     tuning_pipeline = Pipeline([("preprocessor", preprocessor), ("classifier", rf_oob_clf)])
@@ -367,21 +258,6 @@ def run_modeling_pipeline():
 
     print(f"Best Parameters: {grid_search.best_params_}")
     print(f"Best 5-Fold Cross-Validation F1 Score: {grid_search.best_score_:.4f}")
-<<<<<<< HEAD
-    print(f"Out-of-Bag (OOB) Accuracy Score: {best_rf.oob_score_:.4f}\n")
-
-    # Save Best Pipeline Artifact
-    pipeline_save_path = os.path.join(MODEL_DIR, "full_zepto_titanic_pipeline.pkl")
-    joblib.dump(best_pipeline, pipeline_save_path)
-    print(f"[SUCCESS] Complete fitted pipeline saved to '{pipeline_save_path}'.\n")
-
-    # -------------------------------------------------------------
-    # TASK 13: REGRESSION SIDE-TASK (PREDICT FARE)
-    # -------------------------------------------------------------
-    print("=="*30)
-    print("        TASK 13: REGRESSION SIDE-TASK (PREDICT FARE)     ")
-    print("=="*30)
-=======
     print(f"Out-of-Bag Score: {best_rf.oob_score_:.4f}\n")
 
     pipeline_save_path = os.path.join(MODEL_DIR, "full_zepto_titanic_pipeline.pkl")
@@ -394,7 +270,6 @@ def run_modeling_pipeline():
     print("=========================================================")
     print("        TASK 13: REGRESSION SIDE-TASK - PREDICT FARE     ")
     print("=========================================================")
->>>>>>> feature/data-pipeline
 
     X_reg = df.drop(columns=["fare", "survived", "alive"])
     y_reg = df["fare"]
@@ -429,25 +304,13 @@ def run_modeling_pipeline():
     plt.figure(figsize=(8, 5))
     plt.scatter(y_pred_r, residuals, alpha=0.6, color="purple")
     plt.axhline(0, color="red", linestyle="--")
-<<<<<<< HEAD
-    plt.xlabel("Predicted Fare ($)")
-    plt.ylabel("Residuals ($)")
-    plt.title("Linear Regression Residual Plot (Fare Prediction)")
-=======
     plt.xlabel("Predicted Fare")
     plt.ylabel("Residuals")
     plt.title("Fare Regression Residual Plot")
->>>>>>> feature/data-pipeline
     plt.tight_layout()
     plt.savefig(os.path.join(CHARTS_DIR, "fare_regression_residuals.png"))
     plt.close()
 
-<<<<<<< HEAD
-    print("\nResidual Spread Analysis: The residual plot displays strong HETEROSCEDASTICITY (fan-shaped distribution), indicating that errors increase proportionally for higher luxury fare classes.")
-
-if __name__ == "__main__":
-    run_modeling_pipeline()
-=======
     # -------------------------------------------------------------
     # BUILD REGRESSION METRICS AND INVOKE MARKDOWN REPORT
     # -------------------------------------------------------------
@@ -476,4 +339,3 @@ if __name__ == "__main__":
         sys.stdout = logger.terminal
         logger.close()
         print(f"[COMPLETED] Modeling outputs written to {log_path}")
->>>>>>> feature/data-pipeline
