@@ -4,10 +4,14 @@ import pandas as pd
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "models", "full_zepto_titanic_pipeline.pkl")
 
+
 def verify_pipeline():
-    print("=="*30)
+    print("=========================================================")
     print("      VERIFYING SAVED PIPELINE RELOAD & PREDICTION       ")
-    print("=="*30)
+    print("=========================================================")
+
+    if not os.path.exists(MODEL_PATH):
+        raise FileNotFoundError(f"Model artifact not found at {MODEL_PATH}. Run 02_modeling.py first.")
 
     # Load complete fitted sklearn pipeline
     pipeline = joblib.load(MODEL_PATH)
@@ -53,7 +57,9 @@ def verify_pipeline():
         status = "Survived" if pred == 1 else "Died"
         print(f"Passenger {i+1} ({raw_sample.iloc[i]['sex']}, Class {raw_sample.iloc[i]['pclass']}): Prediction = {status} (Survival Probability = {probabilities[i]:.2%})")
 
-    print("\n✅ PIPELINE VERIFICATION SUCCESSFUL: Pipeline takes raw input end-to-end!")
+    # Replaced '\u2705' emoji with clean text tag '[SUCCESS]'
+    print("\n[SUCCESS] PIPELINE VERIFICATION SUCCESSFUL: Pipeline takes raw input end-to-end!")
+
 
 if __name__ == "__main__":
     verify_pipeline()
