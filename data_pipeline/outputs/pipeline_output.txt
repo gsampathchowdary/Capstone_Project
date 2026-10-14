@@ -1,0 +1,57 @@
+=========================================================
+                EXECUTING SQL QUERIES                    
+=========================================================
+
+1. High-Rated Books with rating >= 4 [SELECT / WHERE]:
+                                                                                         title  price_gbp  price_inr  rating
+                                                                                 Sharp Objects      47.82    5045.01       4
+                                                         Sapiens: A Brief History of Humankind      54.23    5721.26       5
+                                            The Dirty Little Secrets of Getting Your Dream Job      33.34    3517.37       4
+The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics      22.60    2384.30       4
+                                                                         Shakespeare's Sonnets      20.66    2179.63       4 
+
+2. Most Expensive Books [ORDER BY / LIMIT]:
+                                       title  price_gbp  price_inr
+The Death of Humanity: and the Case for Life      58.11     6130.6
+The Death of Humanity: and the Case for Life      58.11     6130.6
+The Death of Humanity: and the Case for Life      58.11     6130.6
+The Death of Humanity: and the Case for Life      58.11     6130.6
+The Death of Humanity: and the Case for Life      58.11     6130.6 
+
+3. Available Rating Levels [DISTINCT]:
+ rating
+      1
+      2
+      3
+      4
+      5 
+
+4. Mid-Range Price with Rating 4 or 5 [BETWEEN / IN]:
+                                                                                         title  price_inr  rating  in_stock
+                                            The Dirty Little Secrets of Getting Your Dream Job    3517.37       4         1
+The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics    2384.30       4         1
+                                                                         Shakespeare's Sonnets    2179.63       4         1
+                                                                     Rip it Up and Start Again    3694.61       5         1
+                                                                    Chase Me (Paris Nights #2)    2665.99       5         1 
+
+5. Top Rated Books with Category Name [JOIN]:
+                                           title category_name  price_gbp  price_inr  rating
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5 
+
+=========================================================
+        PANDAS pd.merge EQUIVALENCE CHECK               
+=========================================================
+
+Pandas pd.merge Output:
+                                           title category_name  price_gbp  price_inr  rating
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5
+Princess Between Worlds (Wide-Awake Princess #5)       Fantasy      13.34    1407.37       5 
+
+Equivalence Verification: Both outputs match exactly -> True
