@@ -1,7 +1,7 @@
 import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from rag_graph import build_support_graph, SupportResponse
+from .rag_graph import build_support_graph, SupportResponse
 
 app = FastAPI(
     title="Zepto GenAI Policy Support Assistant",
