@@ -42,6 +42,6 @@ jobs:
         run: |
           docker run -d -p 7860:7860 --name test-zepto-container zepto-platform-api:latest
           # Give FastAPI a few seconds to initialize
-          sleep 5
+          sleep 10
           # Test health or root endpoint
           curl --fail http://localhost:7860/ || curl --fail http://localhost:7860/docs
