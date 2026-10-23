@@ -7,3 +7,4 @@ __pycache__/
 
 # ChromaDB vector store cache
 support_assistant/chroma_db/
+

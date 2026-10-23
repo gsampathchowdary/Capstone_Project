@@ -30,7 +30,7 @@ Data columns (total 15 columns):
  13  alive        891 non-null    str     
  14  alone        891 non-null    bool    
 dtypes: bool(2), category(2), float64(2), int64(4), str(5)
-memory usage: 80.7 KB
+memory usage: 100.4 KB
 
 --- Summary Statistics ---
          survived      pclass         age       sibsp       parch        fare
@@ -174,6 +174,12 @@ Best 5-Fold Cross-Validation F1 Score: 0.7455
 Out-of-Bag Score: 0.8188
 
 [SAVED] Complete pipeline artifact saved to: 'c:\Users\sampa\CapstoneProject\zepto_data_ai_platform\analytics\models\full_zepto_titanic_pipeline.pkl'.
+
+=========================================================
+   TASK 14: PYTORCH DEEP EMBEDDINGS & CUSTOMER SEGMENTATION 
+=========================================================
+[SAVED] PyTorch Autoencoder weights saved to 'c:\Users\sampa\CapstoneProject\zepto_data_ai_platform\analytics\models\pytorch_customer_autoencoder.pt'
+[SAVED] Segmented customer data saved to 'c:\Users\sampa\CapstoneProject\zepto_data_ai_platform\analytics\outputs\segmented_customers_output.csv'
 
 =========================================================
         TASK 13: REGRESSION SIDE-TASK - PREDICT FARE     

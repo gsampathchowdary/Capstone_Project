@@ -5,6 +5,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from sklearn.cluster import KMeans
+
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
@@ -33,7 +38,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 class TeeLogger:
-    """Mirrors console prints directly into  output log file."""
+    """Mirrors console prints directly into an output log file."""
     def __init__(self, filepath, mode="a"):
         self.terminal = sys.stdout
         self.logfile = open(filepath, mode, encoding="utf-8")
@@ -58,12 +63,42 @@ def load_data():
     return df
 
 
-def generate_markdown_report(metrics_list, reg_metrics):
-    """Generates a structured markdown file linking all charts and evaluation metrics."""
+class CustomerEmbeddingAutoencoder(nn.Module):
+    """
+    Custom PyTorch Deep Neural Autoencoder to extract dense latent embeddings
+    for unsupervised customer segmentation and propensity modeling.
+    """
+    def __init__(self, input_dim: int, embedding_dim: int = 16):
+        super().__init__()
+        self.encoder = nn.Sequential(
+            nn.Linear(input_dim, 64),
+            nn.BatchNorm1d(64),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.Linear(64, 32),
+            nn.ReLU(),
+            nn.Linear(32, embedding_dim)
+        )
+        self.decoder = nn.Sequential(
+            nn.Linear(embedding_dim, 32),
+            nn.ReLU(),
+            nn.Linear(32, 64),
+            nn.ReLU(),
+            nn.Linear(64, input_dim)
+        )
+
+    def forward(self, x):
+        latent = self.encoder(x)
+        reconstructed = self.decoder(latent)
+        return latent, reconstructed
+
+
+def generate_markdown_report(metrics_list, reg_metrics, pytorch_summary):
+    """Generates a structured markdown file linking all charts, evaluation metrics, and PyTorch embeddings summary."""
     report_path = os.path.join(OUTPUT_DIR, "analytics_report.md")
     
     with open(report_path, "w", encoding="utf-8") as f:
-        f.write("# Module 2: Analytics and Machine Learning Visual Report\n\n")
+        f.write("# Module 2: Analytics, Machine Learning & PyTorch Deep Embeddings Report\n\n")
         f.write("## 1. Exploratory Visualizations\n\n")
         f.write("### Univariate Distributions: Age and Fare\n")
         f.write("![Age and Fare Distributions](../charts/age_fare_distributions.png)\n\n")
@@ -75,7 +110,8 @@ def generate_markdown_report(metrics_list, reg_metrics):
         f.write("| ![Chart 1](../charts/chart1_survival_sex_pclass.png) | ![Chart 2](../charts/chart2_fare_by_class_survival.png) |\n")
         f.write("| Chart 3: Age vs Fare Scatter | Chart 4: Family Size Survival |\n")
         f.write("| ![Chart 3](../charts/chart3_age_vs_fare_scatter.png) | ![Chart 4](../charts/chart4_family_size_survival.png) |\n\n")
-        f.write("## 2. Predictive Modeling Outputs\n\n")
+        
+        f.write("## 2. Predictive Modeling & Classification Outputs\n\n")
         f.write("### Decision Tree Structure\n")
         f.write("![Decision Tree](../charts/decision_tree.png)\n\n")
         f.write("### Fare Regression Residual Plot\n")
@@ -85,7 +121,15 @@ def generate_markdown_report(metrics_list, reg_metrics):
         f.write("|---|---|---|---|---|---|\n")
         for m in metrics_list:
             f.write(f"| {m['Model']} | {m['Accuracy']} | {m['Precision']} | {m['Recall']} | {m['F1 Score']} | {m['ROC-AUC']} |\n")
-        f.write("\n### Regression Side-Task: Fare Prediction\n\n")
+        
+        f.write("\n### 3. PyTorch Deep Neural Embeddings & Unsupervised Segmentation\n\n")
+        f.write(f"- **Embedding Latent Dimension**: {pytorch_summary['embedding_dim']}\n")
+        f.write(f"- **Autoencoder Training Epochs**: {pytorch_summary['epochs']}\n")
+        f.write(f"- **Final Reconstruction Loss (MSE)**: {pytorch_summary['final_loss']:.6f}\n")
+        f.write(f"- **Identified Customer Clusters**: {pytorch_summary['n_clusters']}\n")
+        f.write(f"- **Artifacts Saved**: `models/pytorch_customer_autoencoder.pt`, `outputs/segmented_customers_output.csv`\n\n")
+
+        f.write("### 4. Regression Side-Task: Fare Prediction\n\n")
         f.write(f"- Mean Absolute Error: {reg_metrics['MAE']}\n")
         f.write(f"- Root Mean Squared Error: {reg_metrics['RMSE']}\n")
         f.write(f"- R-Squared: {reg_metrics['R2']}\n")
@@ -95,7 +139,7 @@ def generate_markdown_report(metrics_list, reg_metrics):
 
 
 def run_modeling_pipeline():
-    """Executes tasks 7 through 14, gathers metrics, and exports reports."""
+    """Executes classification modeling, PyTorch deep neural embeddings, regression side-task, and exports reports."""
     df = load_data()
     
     # -------------------------------------------------------------
@@ -265,6 +309,63 @@ def run_modeling_pipeline():
     print(f"[SAVED] Complete pipeline artifact saved to: '{pipeline_save_path}'.\n")
 
     # -------------------------------------------------------------
+    # TASK 14: PYTORCH DEEP NEURAL EMBEDDINGS & UNSUPERVISED CLUSTERING
+    # -------------------------------------------------------------
+    print("=========================================================")
+    print("   TASK 14: PYTORCH DEEP EMBEDDINGS & CUSTOMER SEGMENTATION ")
+    print("=========================================================")
+
+    # Prepare numeric features for PyTorch Autoencoder training
+    num_imputer = SimpleImputer(strategy="median")
+    scaler = StandardScaler()
+    X_num_processed = scaler.fit_transform(num_imputer.fit_transform(df[num_features]))
+    
+    tensor_x = torch.tensor(X_num_processed, dtype=torch.float32)
+    input_dim = X_num_processed.shape[1]
+    embedding_dim = 16
+    epochs = 50
+
+    autoencoder = CustomerEmbeddingAutoencoder(input_dim=input_dim, embedding_dim=embedding_dim)
+    criterion = nn.MSELoss()
+    optimizer = optim.AdamW(autoencoder.parameters(), lr=1e-3, weight_decay=1e-4)
+
+    autoencoder.train()
+    final_loss = 0.0
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        latent, reconstructed = autoencoder(tensor_x)
+        loss = criterion(reconstructed, tensor_x)
+        loss.backward()
+        optimizer.step()
+        final_loss = loss.item()
+
+    autoencoder.eval()
+    with torch.no_grad():
+        latent_embeddings, _ = autoencoder(tensor_x)
+
+    # Perform KMeans clustering on PyTorch dense neural embeddings
+    kmeans = KMeans(n_clusters=4, random_state=42, n_init="auto")
+    cluster_labels = kmeans.fit_predict(latent_embeddings.numpy())
+
+    # Save PyTorch model and segmented dataset outputs
+    pytorch_model_path = os.path.join(MODEL_DIR, "pytorch_customer_autoencoder.pt")
+    torch.save(autoencoder.state_dict(), pytorch_model_path)
+
+    segmented_df = df.copy()
+    segmented_df["Customer_Cluster"] = cluster_labels
+    segmented_csv_path = os.path.join(OUTPUT_DIR, "segmented_customers_output.csv")
+    segmented_df.to_csv(segmented_csv_path, index=False)
+
+    pytorch_summary = {
+        "embedding_dim": embedding_dim,
+        "epochs": epochs,
+        "final_loss": final_loss,
+        "n_clusters": 4
+    }
+    print(f"[SAVED] PyTorch Autoencoder weights saved to '{pytorch_model_path}'")
+    print(f"[SAVED] Segmented customer data saved to '{segmented_csv_path}'\n")
+
+    # -------------------------------------------------------------
     # TASK 13: REGRESSION SIDE-TASK
     # -------------------------------------------------------------
     print("=========================================================")
@@ -311,9 +412,6 @@ def run_modeling_pipeline():
     plt.savefig(os.path.join(CHARTS_DIR, "fare_regression_residuals.png"))
     plt.close()
 
-    # -------------------------------------------------------------
-    # BUILD REGRESSION METRICS AND INVOKE MARKDOWN REPORT
-    # -------------------------------------------------------------
     reg_metrics = {
         "MAE": round(mae, 2),
         "RMSE": round(rmse, 2),
@@ -321,8 +419,8 @@ def run_modeling_pipeline():
         "Adj R2": round(adj_r2, 4)
     }
 
-    # Pass both metrics objects to write the consolidated markdown report
-    generate_markdown_report(results, reg_metrics)
+    # Generate consolidated Markdown Report incorporating all metrics and PyTorch summary
+    generate_markdown_report(results, reg_metrics, pytorch_summary)
 
 
 if __name__ == "__main__":

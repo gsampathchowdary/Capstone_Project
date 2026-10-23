@@ -120,7 +120,7 @@ Data columns (total 15 columns):
  13  alive        891 non-null    str     
  14  alone        891 non-null    bool    
 dtypes: bool(2), category(2), float64(2), int64(4), str(5)
-memory usage: 80.7 KB
+memory usage: 100.4 KB
 
 --- Summary Statistics ---
          survived      pclass         age       sibsp       parch        fare
@@ -271,6 +271,12 @@ Out-of-Bag Score: 0.8188
 [SAVED] Complete pipeline artifact saved to: 'c:\Users\sampa\CapstoneProject\zepto_data_ai_platform\analytics\models\full_zepto_titanic_pipeline.pkl'.
 
 =========================================================
+   TASK 14: PYTORCH DEEP EMBEDDINGS & CUSTOMER SEGMENTATION 
+=========================================================
+[SAVED] PyTorch Autoencoder weights saved to 'c:\Users\sampa\CapstoneProject\zepto_data_ai_platform\analytics\models\pytorch_customer_autoencoder.pt'
+[SAVED] Segmented customer data saved to 'c:\Users\sampa\CapstoneProject\zepto_data_ai_platform\analytics\outputs\segmented_customers_output.csv'
+
+=========================================================
         TASK 13: REGRESSION SIDE-TASK - PREDICT FARE     
 =========================================================
 Regression Metrics: MAE = 20.81 | RMSE = 30.47 | R2 = 0.3999 | Adj R2 = 0.3604
@@ -305,7 +311,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 [INGESTION] Generating embeddings using sentence-transformers/all-MiniLM-L6-v2...
 
 Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
-Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3656.61it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2384.88it/s]
 [SUCCESS] Vector store populated and persisted at 'c:\Users\sampa\CapstoneProject\zepto_data_ai_platform\support_assistant\chroma_db'.
 
 ============================================================
@@ -319,7 +325,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 Processing query: What is the delivery fee for orders below INR 149?
 
 Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
-Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10820.08it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11163.42it/s]
 Result -> {
   "query": "What is the delivery fee for orders below INR 149?",
   "intent": "policy_question",

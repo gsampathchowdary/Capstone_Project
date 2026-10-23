@@ -1,4 +1,4 @@
-# Module 2: Analytics and Machine Learning Visual Report
+# Module 2: Analytics, Machine Learning & PyTorch Deep Embeddings Report
 
 ## 1. Exploratory Visualizations
 
@@ -15,7 +15,7 @@
 | Chart 3: Age vs Fare Scatter | Chart 4: Family Size Survival |
 | ![Chart 3](../charts/chart3_age_vs_fare_scatter.png) | ![Chart 4](../charts/chart4_family_size_survival.png) |
 
-## 2. Predictive Modeling Outputs
+## 2. Predictive Modeling & Classification Outputs
 
 ### Decision Tree Structure
 ![Decision Tree](../charts/decision_tree.png)
@@ -31,7 +31,15 @@
 | Decision Tree | 0.7821 | 0.8409 | 0.5362 | 0.6549 | 0.807 |
 | Random Forest | 0.7989 | 0.7797 | 0.6667 | 0.7188 | 0.8294 |
 
-### Regression Side-Task: Fare Prediction
+### 3. PyTorch Deep Neural Embeddings & Unsupervised Segmentation
+
+- **Embedding Latent Dimension**: 16
+- **Autoencoder Training Epochs**: 50
+- **Final Reconstruction Loss (MSE)**: 0.332552
+- **Identified Customer Clusters**: 4
+- **Artifacts Saved**: `models/pytorch_customer_autoencoder.pt`, `outputs/segmented_customers_output.csv`
+
+### 4. Regression Side-Task: Fare Prediction
 
 - Mean Absolute Error: 20.81
 - Root Mean Squared Error: 30.47
