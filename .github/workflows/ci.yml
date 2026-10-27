@@ -34,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./Dockerfile
+          file: ./support_assistant/Dockerfile
           load: true
           tags: zepto-platform-api:latest
 
