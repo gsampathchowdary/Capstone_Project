@@ -8,6 +8,7 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV MOCK_LLM=1
+ENV PYTHONPATH="/app:/app/support_assistant"
 
 # Install system dependencies and curl for health check
 RUN apt-get update && apt-get install -y --no-install-recommends \
